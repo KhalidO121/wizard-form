@@ -2,8 +2,15 @@ import TextField from "../../components/Fields/TextField";
 import BaseForm from "../../components/BaseForm";
 
 const FormOne = () => {
+  const validateFormOne = () => {
+    console.log("Hello");
+  };
   return (
-    <BaseForm formTitle="Basic Information" buttonTitle="Next">
+    <BaseForm
+      formTitle="Basic Information"
+      buttonTitle="Next"
+      submitMethod={validateFormOne}
+    >
       <TextField title="First Name" />
       <TextField title="Last Name" />
       <TextField title="Email" />
