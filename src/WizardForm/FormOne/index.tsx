@@ -1,15 +1,12 @@
 import TextField from "../../components/Fields/TextField";
 import BaseForm from "../../components/BaseForm";
 
-const FormOne = () => {
-  const validateFormOne = () => {
-    console.log("Hello");
-  };
+const FormOne = ({ handleCompletion }: { handleCompletion: () => void }) => {
   return (
     <BaseForm
       formTitle="Basic Information"
       buttonTitle="Next"
-      submitMethod={validateFormOne}
+      submitMethod={() => handleCompletion()}
     >
       <TextField title="First Name" />
       <TextField title="Last Name" />
