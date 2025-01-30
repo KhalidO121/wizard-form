@@ -1,12 +1,16 @@
+import { useContext } from "react";
+import { WizardFormContext } from "../context/WizardFormContext";
+
 import BaseForm from "../../components/BaseForm";
 import TextField from "../../components/Fields/TextField";
 
-const FormTwo = ({ handleCompletion }: { handleCompletion: () => void }) => {
+const FormTwo = () => {
+  const { triggerNextForm } = useContext(WizardFormContext);
   return (
     <BaseForm
       formTitle="Personal Details"
       buttonTitle="Next"
-      submitMethod={handleCompletion}
+      submitMethod={triggerNextForm}
     >
       <TextField title="Date of Birth" />
       <TextField title="Gender" />
