@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { WizardFormContext } from "../context/WizardFormContext";
+import { WizardFormContext } from "../../context/WizardFormContext";
 
-import TextField from "../../components/Fields/TextField";
-import BaseForm from "../../components/BaseForm";
+import TextField from "../../../components/Fields/TextField";
+import BaseForm from "../../../components/BaseForm";
 
 const FormOne = () => {
   const { triggerNextForm } = useContext(WizardFormContext);
+
   return (
     <BaseForm
       formTitle="Basic Information"

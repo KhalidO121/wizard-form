@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { WizardFormContext } from "./context/WizardFormContext";
 
-import FormOne from "./FormOne";
-import FormThree from "./FormThree";
-import FormTwo from "./FormTwo";
+import FormOne from "./forms/FormOne";
+import FormTwo from "./forms/FormTwo";
+import FormThree from "./forms/FormThree";
 
 const WizardForm = () => {
   const [pointer, setPointer] = useState(0);

@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { WizardFormContext } from "../context/WizardFormContext";
+import { WizardFormContext } from "../../context/WizardFormContext";
 
-import BaseForm from "../../components/BaseForm";
-import TextField from "../../components/Fields/TextField";
+import BaseForm from "../../../components/BaseForm";
+import TextField from "../../../components/Fields/TextField";
 
 const FormTwo = () => {
   const { triggerNextForm } = useContext(WizardFormContext);
