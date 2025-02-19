@@ -12,13 +12,13 @@ const FormTwo = () => {
       buttonTitle="Next"
       submitMethod={triggerNextForm}
     >
-      <TextField title="Date of Birth" />
-      <TextField title="Gender" />
-      <TextField title="Country" />
-      <TextField title="State/Province" />
-      <TextField title="City" />
-      <TextField title="Postal Code" />
-      <TextField title="Profile Picture Upload" />
+      <TextField title="Date of Birth" required />
+      <TextField title="Gender" required />
+      <TextField title="Country" required />
+      <TextField title="State/Province" required />
+      <TextField title="City" required />
+      <TextField title="Postal Code" required />
+      <TextField title="Profile Picture Upload" required={false} />
     </BaseForm>
   );
 };

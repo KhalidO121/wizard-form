@@ -12,9 +12,9 @@ const FormThree = () => {
       buttonTitle="Submit"
       submitMethod={triggerNextForm}
     >
-      <TextField title="Preferred Communications Methods" />
-      <TextField title="Marketing Preferences" />
-      <TextField title="Account Visibility" />
+      <TextField title="Preferred Communications Methods" required={false} />
+      <TextField title="Marketing Preferences" required={false} />
+      <TextField title="Account Visibility" required={false} />
     </BaseForm>
   );
 };

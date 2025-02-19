@@ -13,12 +13,12 @@ const FormOne = () => {
       buttonTitle="Next"
       submitMethod={triggerNextForm}
     >
-      <TextField title="First Name" />
-      <TextField title="Last Name" />
-      <TextField title="Email" />
-      <TextField title="Mobile Number" />
-      <TextField title="Password" />
-      <TextField title="Confirm Password" />
+      <TextField title="First Name" required maxLength={4} />
+      <TextField title="Last Name" required />
+      <TextField title="Email" required />
+      <TextField title="Mobile Number" required />
+      <TextField title="Password" required={false} />
+      <TextField title="Confirm Password" required={false} />
     </BaseForm>
   );
 };
