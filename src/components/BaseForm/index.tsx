@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 import { useForm, FormProvider } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 const BaseForm = ({
   children,
@@ -10,9 +12,18 @@ const BaseForm = ({
   children: ReactNode;
   formTitle: string;
   buttonTitle: string;
-  submitMethod: () => void;
+  submitMethod: (a: object) => void;
 }) => {
-  const methods = useForm({});
+  const schema = yup
+    .object({
+      firstName: yup.string().required(),
+      age: yup.number().positive().integer().required(),
+    })
+    .required();
+
+  const methods = useForm({
+    resolver: yupResolver(schema),
+  });
 
   return (
     <FormProvider {...methods}>
