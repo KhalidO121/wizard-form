@@ -14,15 +14,18 @@ const BaseForm = ({
   buttonTitle: string;
   submitMethod: (a: object) => void;
 }) => {
-  const schema = yup
-    .object({
-      firstName: yup.string().required(),
-      age: yup.number().positive().integer().required(),
-    })
-    .required();
+  const isNumber = yup.number();
+  const isRequiredNumber = yup.number().required();
+  const noZero = yup.number().min(1);
+
+  const userRoleSchema = isNumber.concat(isRequiredNumber).concat(noZero);
+
+  const formSchema = yup.object().shape({
+    role: userRoleSchema,
+  });
 
   const methods = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(formSchema),
   });
 
   return (
